@@ -1,4 +1,4 @@
-Just version control for now. Not useful
+Just version control for now. Not usefull
 
 Installing:
 
