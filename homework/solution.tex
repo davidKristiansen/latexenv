@@ -1,0 +1,103 @@
+    % -*- root: ../main.tex -*-
+% -----------------------------------------------------------------------------
+%                               Oppgave 1
+% ---------------------------------------------------------------------%<*sol1>
+
+%</sol1>-----------------------------------------------------------------------
+% Oppgave 2
+% ---------------------------------------------------------------------%<*sol2>
+Med \emph{korteste} vei kan man mene den fysisk korteste, kjappeste, eller den veien med minst belastning. Altså den veien som gjør at pakken kommer kjappest frem.
+%</sol2>-----------------------------------------------------------------------
+%                               Oppgave 3
+% ---------------------------------------------------------------------%<*sol3>
+\begin{enumerate}[label=\alph*)]
+    \item Man kan bruke en unipolar
+    \item AMI skifter mellom + og - i signalet for ``\emph{1-ere}''.
+    \item Manchester koding
+    \item Manchster
+\end{enumerate}
+%</sol3>-----------------------------------------------------------------------
+%                               Oppgave 4
+% ---------------------------------------------------------------------%<*sol4>
+\begin{itemize}
+    \item \textbf{Termisk støy} er elektrisk støy som skyldes vibrasjoner av elektroner. Når en elektronisk komponent, f.eks. en motstand, har en temperatur over det absolutte nullpunktet, –273,15$^{\circ}$C, vil de termiske vibrasjonene av elektronene i komponenten gi opphav til elektriske spenninger.
+
+    \item \textbf{Intermodulasjonsstøy} er støy som kommer innenfra. som for eksempel, støy fra strømforsyner.
+
+    \item \textbf{Krysstale} er når signal fra en kilde blir plukket opp av en annen. Et lederpar i en TP--kabel kan plukke opp signalet fra et annet par, sånn at man f.eks hører naboen når man løfter opp røret.
+
+    \item \textbf{EM impulsstøy} er støy forutasket av ytre elektromagnetiske pulse. Et lynnedslag er en typisk kilde for dette.
+\end{itemize}
+%</sol4>-----------------------------------------------------------------------
+%                               Oppgave 5
+% ---------------------------------------------------------------------%<*sol5>
+    \textbf{Nyquist:} $$C = 2 \cdot B \log_2 \left( M \right)$$
+
+    Nyquists fomrmel gir svar på hvor kanalkabasitet vi har i $bps$ under støyfrie forhold. Noe som i praksis ikke er mulig.\\~\\
+
+
+    \textbf{Shannon:} $$ C = B \log_2 \left( 1 + \frac{S}{N}\right) $$
+
+    Shannons formel tar utgangspunkt i forholdet mellom \emph{datarate}, støy of \emph{feilrate}. For et gitt støynivå, vil høyere datarate føre til flere feil.\\
+    Signal--støy-forholdet blir ofte målt hos mottaker. $(S/N)_{dB} = 10\log_2\frac{\text{signal}}{\text{noise}}$
+
+%</sol5>-----------------------------------------------------------------------
+%                               Oppgave 6
+% ---------------------------------------------------------------------%<*sol6>
+Vi tar utgangspunkt i to måter og sende et to--bits signal analogt.\\
+
+\textbf{4-PSK} sender det analoge signalet med 45$^\circ$ forskyvning pr. bit--verd.\\
+
+\textbf{4-QAM} sender signalet med to amplituder og to faser.\\
+\includegraphics[width=.49\textwidth]{4psk.pdf}
+\includegraphics[width=.49\textwidth]{4qam.pdf}
+%</sol6>-----------------------------------------------------------------------
+%                               Oppgave 7
+% ---------------------------------------------------------------------%<*sol7>
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{src/tikz/bitmonster.pdf}
+\end{figure}
+%</sol7>-----------------------------------------------------------------------
+%                               Oppgave 8
+% ---------------------------------------------------------------------%<*sol8>
+\begin{enumerate}
+    \item Enkel NRZ
+    \item Manchester
+
+\end{enumerate}
+%</sol8>-----------------------------------------------------------------------
+%                               Oppgave 9
+% ---------------------------------------------------------------------%<*sol9>
+\includegraphics[width=.5\textwidth]{src/tikz/Output/circuit.pdf}
+\includegraphics[width=0.5\textwidth]{src/tikz/Output/barebolge.pdf}
+
+%</sol9>-----------------------------------------------------------------------
+%                               Oppgave 10
+% --------------------------------------------------------------------%<*sol10>
+\begin{minipage}{0.49\textwidth}
+    \begin{tabular}{ l  c c}
+        \toprule
+        Bit nr: & Fase & Amplitude\\ \midrule
+        0000 & $270^{\circ}$   & 4 \\
+        0001 & $225^{\circ}$   & 3 \\
+        0010 & $315^{\circ}$   & 3 \\
+        0011 & $270^{\circ}$   & 2 \\
+        0100 & $225^{\circ}$   & 1 \\
+        0101 & $315^{\circ}$   & 1 \\
+        0110 & $180^{\circ}$   & 4 \\
+        0111 & $180^{\circ}$   & 2 \\
+        1000 & $0/360^{\circ}$ & 2 \\
+        1001 & $0/360^{\circ}$ & 4\\
+        1010 & $135^{\circ}$   & 1 \\
+        1011 & $45^{\circ}$    & 1 \\
+        1100 & $90^{\circ}$    & 2 \\
+        1101 & $135^{\circ}$   & 3 \\
+        1110 & $45^{\circ}$    & 3 \\
+        1111 & $90^{\circ}$    & 4 \\ \bottomrule
+    \end{tabular}
+\end{minipage}
+\begin{minipage}[L]{0.49\textwidth}
+    \includegraphics[width=1.1\textwidth]{src/tikz/qam.pdf}
+\end{minipage}
+%</sol10>
