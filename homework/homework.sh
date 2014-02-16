@@ -34,7 +34,6 @@ quit_if_canceled $?
 # Substitute stored last dir
 sed -i '/HOMEWORK_DIR/ d' $conf_file
 echo HOMEWORK_DIR="\"$HOMEWORK_DIR\"" >> "$conf_file"
-mkdir "$HOMEWORK_DIR"
 cd "$HOMEWORK_DIR"
 # -----------------------------------------------------------------------------
 HOMEWORK_ASSIGEMENT=$(zenity --entry --entry-text="$HOMEWORK_ASSIGEMENT" --text="Input name of the assigment")
@@ -44,6 +43,7 @@ quit_if_canceled $?
 # Substitute stored last dir
 sed -i '/HOMEWORK_ASSIGEMENT/ d' "$conf_file"
 echo HOMEWORK_ASSIGEMENT="\"$HOMEWORK_ASSIGEMENT\"" >> "$conf_file"
+mkdir -p "$HOMEWORK_ASSIGEMENT"
 cd "$HOMEWORK_ASSIGEMENT"
 # -----------------------------------------------------------------------------
 HOMEWORK_NR=$(zenity --entry --text="Number of questions")
