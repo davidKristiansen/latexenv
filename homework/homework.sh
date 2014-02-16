@@ -66,4 +66,4 @@ mkdir -p "$src_dir/tikz"
 mkdir -p "$res_dir"
 mkdir -p "$res_dir/pictures"
 # -----------------------------------------------------------------------------
-cd $inc_dir
+cp $SCRIPT_DIR/homework/preamble.tex $inc_dir/

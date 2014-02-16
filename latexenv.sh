@@ -20,6 +20,9 @@ if [ ! -f "$conf_file" ]; then
     touch $conf_file
 fi
 . $conf_file
+
+sed -i '/SCRIPT_DIR/ d' $conf_file
+echo SCRIPT_DIR=\"$PWD\" >> $conf_file
 # -----------------------------------------------------------------------------
 
 # Checking for user name
