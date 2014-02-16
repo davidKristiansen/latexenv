@@ -1,5 +1,13 @@
 #!/bin/bash
 
+quit_if_canceled () {
+    # Quit if canceled
+    if [ "$1" -ne 0 ]; then
+        echo "Canceled!"
+        exit 0
+    fi
+}
+
 # -----------------------------------------------------------------------------
 # Checking for file dependencies
 # -----------------------------------------------------------------------------
@@ -25,12 +33,23 @@ env=$(zenity --list \
   --column="Environment" --column="Description" \
     Homework "A homework environment" \
     Article "An article environment")
+# -----------------------------------------------------------------------------
 
-# Quit if canceled
-if [ "$?" -ne 0 ]; then
-    exit 0
-fi
+quit_if_canceled $?
 
+# Asking for user name, with default entry
+USER_NAME=$(zenity --entry \
+    --title="Your name" \
+    --text="Enter your name" \
+    --entry-text="$USER_NAME")
+
+quit_if_canceled $?
+
+# Substitute stored user name
+sed -i '/USER_NAME/ d' $conf_file
+echo USER_NAME=\"$USER_NAME\" >> $conf_file
+
+# -----------------------------------------------------------------------------
 case $env in
     Homework*)
         sh homework/homework.sh
@@ -41,5 +60,5 @@ case $env in
             --text="Currently not in use!"
     ;;
 esac
-
+# -----------------------------------------------------------------------------
 exit 0
